@@ -1,73 +1,47 @@
-# Welcome to your Lovable project
+🚗 NeoDrive Rentals
 
-## Project info
+A futuristic, responsive car rental web application where users can browse luxury supercars, register/login, and rent cars with an interactive and modern UI.
 
-**URL**: https://lovable.dev/projects/fe938356-9a40-4538-8344-6dae003c05ee
+🚀 Features
 
-## How can I edit this code?
+User registration & login
 
-There are several ways of editing your application.
+Browse supercars (BMW, Ferrari, Audi, Lamborghini, etc.)
 
-**Use Lovable**
+Car details with pricing & specs
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/fe938356-9a40-4538-8344-6dae003c05ee) and start prompting.
+Date selection and auto total-price calculation
 
-Changes made via Lovable will be committed automatically to this repo.
+Car booking system
 
-**Use your preferred IDE**
+User dashboard for bookings
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Optional admin panel (manage cars & bookings)
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Futuristic dark UI with neon/glassmorphism design
 
-Follow these steps:
+🧱 Tech Stack
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+React / Next.js
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+Tailwind CSS
 
-# Step 3: Install the necessary dependencies.
-npm i
+Node.js / Express (backend)
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+PostgreSQL / MongoDB (database)
 
-**Edit a file directly in GitHub**
+📄 Database Models
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Users – id, name, email, passwordHash, phone, role Cars – id, brand, model, pricePerDay, imageUrl, specs Bookings – id, userId, carId, dates, totalPrice, status
 
-**Use GitHub Codespaces**
+How to Run the Project 1️⃣ Install dependencies npm install
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+2️⃣ Start the development server npm run dev
 
-## What technologies are used for this project?
+3️⃣ Backend server
 
-This project is built with:
+(if separate)
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+npm start
 
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/fe938356-9a40-4538-8344-6dae003c05ee) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+4️⃣ Open in browser http://localhost:3000
