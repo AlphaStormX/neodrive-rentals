@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 222 30% 8%;
+    --foreground: 210 100% 98%;
+
+    --card: 222 25% 12%;
+    --card-foreground: 210 100% 98%;
+
+    --popover: 222 30% 10%;
+    --popover-foreground: 210 100% 98%;
+
+    --primary: 195 100% 55%;
+    --primary-foreground: 222 30% 8%;
+
+    --secondary: 280 90% 65%;
+    --secondary-foreground: 210 100% 98%;
+
+    --accent: 320 100% 60%;
+    --accent-foreground: 210 100% 98%;
+
+    --muted: 222 20% 20%;
+    --muted-foreground: 210 20% 70%;
+
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 210 100% 98%;
+
+    --border: 222 20% 20%;
+    --input: 222 20% 20%;
+    --ring: 195 100% 55%;
+
+    --radius: 1rem;
+
+    /* Neon gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(195 100% 55%), hsl(280 90% 65%));
+    --gradient-hero: linear-gradient(135deg, hsl(195 100% 55% / 0.2), hsl(280 90% 65% / 0.2));
+    --gradient-accent: linear-gradient(90deg, hsl(195 100% 55%), hsl(320 100% 60%));
+    
+    /* Glass effects */
+    --glass-bg: hsl(222 25% 12% / 0.4);
+    --glass-border: hsl(195 100% 55% / 0.2);
+    
+    /* Glow effects */
+    --glow-primary: 0 0 30px hsl(195 100% 55% / 0.5);
+    --glow-secondary: 0 0 30px hsl(280 90% 65% / 0.5);
+    --glow-accent: 0 0 30px hsl(320 100% 60% / 0.5);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    background-image: 
+      radial-gradient(ellipse at top, hsl(195 100% 55% / 0.1), transparent 50%),
+      radial-gradient(ellipse at bottom, hsl(280 90% 65% / 0.1), transparent 50%);
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary/50 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary;
+  }
+}
+
+@layer utilities {
+  /* Glass morphism */
+  .glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+  }
+
+  .glass-strong {
+    background: hsl(222 25% 12% / 0.7);
+    backdrop-filter: blur(20px);
+    border: 1px solid hsl(195 100% 55% / 0.3);
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-accent-text {
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Glow effects */
+  .glow-primary {
+    box-shadow: var(--glow-primary);
+  }
+
+  .glow-secondary {
+    box-shadow: var(--glow-secondary);
+  }
+
+  .glow-accent {
+    box-shadow: var(--glow-accent);
+  }
+
+  /* Hover scale */
+  .hover-scale {
+    @apply transition-transform duration-300 hover:scale-105;
+  }
+
+  /* Smooth transitions */
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+}
